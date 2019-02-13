@@ -54,6 +54,9 @@ let mainConfig = {
   resolve: {
     extensions: ['.js', '.json', '.node']
   },
+  externals: [{
+    'electron-debug': 'electron-debug'
+  }],
   target: 'electron-main'
 }
 
