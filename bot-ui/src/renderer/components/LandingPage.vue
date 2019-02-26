@@ -1,17 +1,16 @@
 <template>
   <div id="wrapper">
-    <SettingsButton></SettingsButton>
-    <CommandList></CommandList>
+    
+    <TopBar></TopBar>
   </div>
 </template>
 
 <script>
-  import CommandList from './LandingPage/CommandList'
-  import SettingsButton from './LandingPage/SettingsButton'
+  import TopBar from './LandingPage/TopBar'
 
   export default {
     name: 'landing-page',
-    components: { CommandList, SettingsButton }
+    components: { TopBar }
   }
 </script>
 

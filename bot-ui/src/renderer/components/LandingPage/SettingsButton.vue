@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="settings">
     <button v-on:click="settingsClick">Settings</button>
   </div>
 </template>
@@ -25,4 +25,7 @@
 </script>
 
 <style scoped>
+  #settings {
+    flex: 0 0 65%;
+  }
 </style>
