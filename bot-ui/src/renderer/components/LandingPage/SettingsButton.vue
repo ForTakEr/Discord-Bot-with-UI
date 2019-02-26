@@ -1,5 +1,5 @@
 <template>
-  <div id="settings">
+  <div id="settings-button">
     <button v-on:click="settingsClick">Settings</button>
   </div>
 </template>
@@ -8,24 +8,20 @@
   export default {
     data () {
       return {
-        electron: process.versions.electron,
-        name: this.$route.name,
-        node: process.versions.node,
-        path: this.$route.path,
-        platform: require('os').platform(),
-        vue: require('vue/package.json').version
       }
     },
     methods: {
       settingsClick: function (event) {
-        alert('Hello')
+        alert('Opened settings')
       }
     }
   }
 </script>
 
 <style scoped>
-  #settings {
-    flex: 0 0 65%;
+  #settings-button {
+    flex: 0;
+    margin-right: 16px;
+    margin-top: 16px;
   }
 </style>
