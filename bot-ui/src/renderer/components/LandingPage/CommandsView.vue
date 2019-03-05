@@ -44,6 +44,7 @@
 <style>
   #commands {
     margin: 24px;
+    background-color: #8cff1a;
   }
 
   #command-list {

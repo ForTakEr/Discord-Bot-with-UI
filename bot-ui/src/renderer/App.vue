@@ -11,5 +11,16 @@
 </script>
 
 <style>
-  /* CSS */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #app {
+    background-color: #59b300;
+    height: 100%;
+  }
+  
+    
 </style>
