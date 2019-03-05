@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div id="commands">
         <ul id="command-list">
-            <li v-for="command in commands">
-              <input type="checkbox">
-                {{ command.desc }}
+            <li v-for="command in commands" :key="command.id"> 
+              <input :id="'cmdcheck' + command.id" type="checkbox">
+              <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
             </li>
         </ul>
     </div>
@@ -15,11 +15,13 @@
       return {
         commands: [
           {
+            id: 0,
             name: 'stream',
             desc: 'Stream music from youtube',
             enabled: false
           },
           {
+            id: 1,
             name: 'meme',
             desc: 'Send random meme',
             enabled: true
@@ -31,3 +33,13 @@
   }
 </script>
 
+<style>
+  #commands {
+    margin: 24px;
+  }
+
+  #command-list {
+    list-style-type: none;
+  }
+
+</style>
