@@ -2,7 +2,7 @@
     <div id="commands">
         <ul id="command-list">
             <li v-for="command in commands" :key="command.id"> 
-              <input :id="'cmdcheck' + command.id" type="checkbox">
+              <input v-model="command.enabled" v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" type="checkbox">
               <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
             </li>
         </ul>
@@ -27,6 +27,14 @@
             enabled: true
           }
         ]
+      }
+    },
+    methods: {
+      // Change boolean of the command.
+      commandEnabled (command) {
+        let app = this
+        app.loading = true
+        command.enabled = !command.enabled
       }
     }
 
