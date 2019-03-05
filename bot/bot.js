@@ -27,24 +27,4 @@ client.on("message", message =>{
             message.reply(response);
         }
       });
-
-    /*
-    if(command === "help"){
-        message.channel.send("Commands: ```ping - returns the response time of the bot\nmeme - sends a random meme```")
-    }
-
-    if(command === "ping"){
-        message.channel.send((new Date().getTime()).toString() - message.createdTimestamp + "ms");
-        console.log((new Date().getTime()).toString() - message.createdTimestamp + "ms");
-    }
-
-    if(command === "meme"){
-        const rando_imgs = [
-            //Insert meme links here.
-            ];
-        message.channel.send(`Your random meme is: `, {
-            file: rando_imgs[Math.floor(Math.random() * rando_imgs.length)]
-        });
-    }
-    */
 })
