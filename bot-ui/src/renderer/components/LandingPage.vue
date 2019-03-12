@@ -1,8 +1,8 @@
 <template>
   <div id="wrapper">
     <TopBar></TopBar>
-    <CommandsView></CommandsView>
-    <SettingsView></SettingsView>
+    <CommandsView v-if="curView == 'CommandsView'"></CommandsView>
+    <SettingsView v-if="curView == 'SettingsView'"></SettingsView>
   </div>
 </template>
 
@@ -13,7 +13,18 @@
 
   export default {
     name: 'landing-page',
-    components: { TopBar, CommandsView, SettingsView }
+    components: { TopBar, CommandsView, SettingsView },
+    data () {
+      return {
+        curView: this.curView
+      }
+    },
+    events: {
+      'setCurView': function (view) {
+        alert(5)
+        this.curView = view
+      }
+    }
   }
 </script>
 
