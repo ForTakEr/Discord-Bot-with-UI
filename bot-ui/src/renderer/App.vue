@@ -18,7 +18,7 @@
   }
 
   #app {
-    background-color: #59b300;
+    background-color: #00b2aa;
     height: 100%;
   }
   
