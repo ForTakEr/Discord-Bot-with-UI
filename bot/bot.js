@@ -9,10 +9,12 @@ client.login(botToken);
 
 client.on("ready", () => {
     console.log("I am ready!");
-    client.user.setActivity('-' + 'help', { type: 'PLAYING' });
+    client.user.setActivity('-' + 'help', {
+        type: 'PLAYING'
+    });
 });
 
-client.on("message", message =>{
+client.on("message", message => {
     const msg = message.content;
     if (!msg.startsWith(prefix) || message.author.bot) return;
 
@@ -24,7 +26,16 @@ client.on("message", message =>{
     Object.values(commands).forEach(async (command) => {
         const response = await command(message);
         if (response) {
-            message.reply(response);
+            if (response.Promise) {
+                response.then(function (value) {
+
+                    message.reply({
+                        file: value
+                    });
+                });
+            } else {
+                message.reply(response);
+            }
         }
-      });
+    });
 })

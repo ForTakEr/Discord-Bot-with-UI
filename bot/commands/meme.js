@@ -1,4 +1,4 @@
-const request = require('request');
+var rp = require('request-promise');
 
 
 module.exports = async (msg) => {
@@ -10,13 +10,13 @@ module.exports = async (msg) => {
 
     var linkToMeme = "";
 
-    request('https://some-random-api.ml/meme', (error, response, body) => {
-        if (!error && response.statusCode == 200) {
-            linkToMeme = JSON.parse(body).url;
-        }
+    var response = rp('https://some-random-api.ml/meme').then(function (htmlString) {
+        return htmlString;
     });
 
-    return {
-        file: linkToMeme
-    };
+    respPromise = Promise.resolve(response);
+
+    respPromise.Promise = true;
+
+    return respPromise;
 };
