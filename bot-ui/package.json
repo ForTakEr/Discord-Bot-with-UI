@@ -2,7 +2,7 @@
   "name": "bot-ui",
   "productName": "bot-ui",
   "version": "0.0.1",
-  "author": "jaanjahimees",
+  "author": "jaanjahimees, ForTakEr, PatrickTeivas, hindrekhan, SilverBarnabas",
   "description": "A Discord bot with UI",
   "license": null,
   "main": "./dist/electron/main.js",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "discord.js": "^11.4.2",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
