@@ -1,5 +1,6 @@
 <template>
   <div id="settings-view">
+    <input id="bottoken" type="text" size="59" maxlength="59" name="bottoken" placeholder="Bot token">
     <webview id="devPortal" :src="devPortalUrl"></webview>
   </div>
 </template>
@@ -21,6 +22,12 @@
   min-height: 250px;
   height: 500px;
   max-height: 500px;
+}
+
+#bottoken {
+  border-style: solid;
+  border-width: 1px;
+  margin: 16px;
 }
 
 </style>
