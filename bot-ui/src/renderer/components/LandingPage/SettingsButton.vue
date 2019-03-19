@@ -11,9 +11,8 @@
       }
     },
     methods: {
-      settingsClick: function (event) {
-        this.$store.dispatch('setCurView', 'SettingsView')
-        alert('Opened settings')
+      settingsClick: function () {
+        this.$parent.$parent.setCurView('SettingsView')
       }
     }
   }

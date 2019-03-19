@@ -12,7 +12,7 @@
     },
     methods: {
       settingsClick: function (event) {
-        alert('Opened Commands')
+        this.$parent.$parent.setCurView('CommandsView')
       }
     }
   }

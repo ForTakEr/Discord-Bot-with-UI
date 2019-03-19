@@ -19,9 +19,8 @@
         curView: this.curView
       }
     },
-    events: {
-      'setCurView': function (view) {
-        alert(5)
+    methods: {
+      setCurView: function (view) {
         this.curView = view
       }
     }
