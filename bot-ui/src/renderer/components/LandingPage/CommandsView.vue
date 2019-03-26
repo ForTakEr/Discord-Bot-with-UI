@@ -3,11 +3,11 @@
         <ul id="command-list">
             <li v-for="command in commands" :key="command.id">
               <div class="cmdcheck cmdcheck-enabled" v-if="command.enabled">
-                <input v-model="command.enabled" v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-enabled" type="checkbox">
+                <input v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-enabled" type="checkbox">
                 <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
               </div>
               <div class="cmdcheck cmdcheck-disabled" v-else>
-                <input v-model="command.enabled" v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-disabled" type="checkbox">
+                <input v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-disabled" type="checkbox">
                 <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
               </div>
             </li>
