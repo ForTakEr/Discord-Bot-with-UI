@@ -8,15 +8,14 @@ module.exports = async (msg) => {
 
     //https://some-random-api.ml/meme
 
-    var linkToMeme = "";
-
-    var response = rp('https://some-random-api.ml/meme').then(function (htmlString) {
+    var response = rp('http://some-random-api.ml/meme').then(function (htmlString) {
         return htmlString;
     });
 
     respPromise = Promise.resolve(response);
-
-    respPromise.Promise = true;
-
-    return respPromise;
+    var promise = {
+        promise: respPromise,
+        isPromise: true
+    };
+    return promise;
 };

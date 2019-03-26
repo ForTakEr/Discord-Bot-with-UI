@@ -26,11 +26,11 @@ client.on("message", message => {
     Object.values(commands).forEach(async (command) => {
         const response = await command(message);
         if (response) {
-            if (response.Promise) {
-                response.then(function (value) {
-
-                    message.reply({
-                        file: value
+            if (response.isPromise) {
+                response.promise.then(function (value) {
+                    var data = JSON.parse(value);
+                    message.reply(data.text, {
+                        file: data.url
                     });
                 });
             } else {
