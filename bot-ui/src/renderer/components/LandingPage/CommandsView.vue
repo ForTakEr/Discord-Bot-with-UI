@@ -1,13 +1,13 @@
 <template>
     <div id="commands">
         <ul id="command-list">
-            <li v-for="command in commands" :key="command.id">
-              <div class="cmdcheck cmdcheck-enabled" v-if="command.enabled">
-                <input v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-enabled" type="checkbox">
+            <li v-for="(command,index) in commands.commands" :key="command.id">
+              <div class="cmdcheck cmdcheck-enabled" v-if="command.enabled" v-on:click="commandEnabled(index)">
+                <input :value="command.enabled"  :id="'cmdcheck' + command.id" class="cmdcheck-enabled" type="checkbox">
                 <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
               </div>
-              <div class="cmdcheck cmdcheck-disabled" v-else>
-                <input v-on:click="commandEnabled(command)" :id="'cmdcheck' + command.id" class="cmdcheck-disabled" type="checkbox">
+              <div class="cmdcheck cmdcheck-disabled" v-else v-on:click="commandEnabled(index)">
+                <input :value="command.enabled" :id="'cmdcheck' + command.id" class="cmdcheck-disabled" type="checkbox">
                 <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
               </div>
             </li>
@@ -16,36 +16,31 @@
 </template>
 
 <script>
-  module.exports = {
-    data: function () {
-      return {
-        commands: [
-          {
-            id: 0,
-            name: 'stream',
-            desc: 'Stream music from youtube',
-            enabled: false
-          },
-          {
-            id: 1,
-            name: 'meme',
-            desc: 'Send random meme',
-            enabled: true
-          }
-        ]
-      }
-    },
-    methods: {
-      // Change boolean of the command.
-      commandEnabled (command) {
-        let app = this
-        app.loading = true
-        command.enabled = !command.enabled
-      }
-    }
+import { mapGetters, mapState } from 'vuex'
 
+export default {
+  computed: {
+    ...mapState({
+      commands: state => state.commands
+    })
+  },
+  mounted () {
+    console.log(this.$store)
+  },
+  data: function () {
+    return {
+
+    }
+  },
+  methods: {
+    // Change boolean of the command.
+    commandEnabled (index) {
+      this.$store.dispatch('toggleCommandEnabled', index)
+    }
   }
-</script>
+
+}
+</script> 
 
 <style>
   #commands {
