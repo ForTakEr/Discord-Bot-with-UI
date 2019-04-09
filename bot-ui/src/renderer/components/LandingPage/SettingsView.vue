@@ -1,8 +1,5 @@
 <template>
   <div id="settings-view">
-    <div id="setting-fields">
-      <input id="bot-token" type="text" size="59" maxlength="59" name="bottoken" placeholder="Bot token">
-    </div>
     <webview id="devPortal" :src="devPortalUrl"></webview>
   </div>
 </template>
@@ -20,22 +17,10 @@
 </script>
 
 <style>
-#setting-fields {
-  background-color: #8cff1a;
-  margin: 12px;
-}
-
 #devPortal {
   min-height: 250px;
   height: 500px;
   max-height: 500px;
-  margin: 12px;
-}
-
-#bot-token {
-  border-style: solid;
-  border-width: 1px;
-  margin: 16px;
 }
 
 </style>
