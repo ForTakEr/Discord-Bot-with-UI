@@ -1,4 +1,5 @@
-var rp = require('request-promise');
+var axios = require('axios');
+const url = "https://some-random-api.ml/meme";
 
 
 module.exports = async (msg) => {
@@ -6,13 +7,7 @@ module.exports = async (msg) => {
         return false;
     }
 
-    //https://some-random-api.ml/meme
-
-    var response = rp('http://some-random-api.ml/meme').then(function (htmlString) {
-        return htmlString;
-    });
-
-    respPromise = Promise.resolve(response);
+    respPromise = Promise.resolve(axios.get(url));
     var promise = {
         promise: respPromise,
         isPromise: true
