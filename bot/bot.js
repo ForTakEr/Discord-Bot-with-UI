@@ -4,6 +4,7 @@ const botToken = "NTQ0ODM4NTk3NTA1OTc0Mjkx.D1arZQ.MRQaVsPYO6cMhcmUhoP2FlhmDEI";
 const commands = require('./commands');
 const prefix = "-";
 
+
 client.login(botToken);
 //Invite link https://discordapp.com/api/oauth2/authorize?client_id=544838597505974291&permissions=10240&scope=bot
 
@@ -28,11 +29,15 @@ client.on("message", message => {
         if (response) {
             if (response.isPromise) {
                 response.promise.then(function (value) {
-                    var data = JSON.parse(value);
-                    message.reply(data.text, {
-                        file: data.url
+                        var data = value.data;
+                        var test = new Discord.RichEmbed()
+                        .setTitle(data.text)
+                        .setImage(data.url)
+                        message.channel.sendEmbed(test);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
                     });
-                });
             } else {
                 message.reply(response);
             }
