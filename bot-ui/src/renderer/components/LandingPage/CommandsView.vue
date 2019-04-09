@@ -50,7 +50,7 @@
 <style>
   #commands {
     margin: 24px;
-    background-color: #8cff1a;
+    background-color: #23272A;
   }
 
   #command-list {
@@ -71,19 +71,19 @@
   }
 
   .cmdcheck-enabled {
-    background-color: green;
+    background-color: #2F7D41;
   }
 
   .cmdcheck-enabled:hover {
-    background-color: rebeccapurple;
+    background-color: #235B30;
   }
 
   .cmdcheck-disabled {
-    background-color: red;
+    background-color: #98555A;
   }
 
   .cmdcheck-disabled:hover {
-    background-color: fuchsia;
+    background-color: #75393D;
   }
 
 </style>

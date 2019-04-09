@@ -18,10 +18,17 @@
   }
 </script>
 
-<style scoped>
+<style>
   #settings-button {
     flex: 0;
     margin-right: 16px;
     margin-top: 16px;
+  }
+
+  #settings-button button {
+    background-color: #7289DA;
+    border-radius: 50px;
+    border: 1px solid black;
+    padding: 2px;
   }
 </style>

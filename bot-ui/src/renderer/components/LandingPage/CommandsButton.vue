@@ -26,9 +26,9 @@
   }
 
   #commands-button button {
-    background-color: aqua;
+    background-color: #7289DA;
     border-radius: 50px;
     border: 1px solid black;
+    padding: 2px;
   }
-
 </style>

@@ -21,7 +21,7 @@
 
 <style>
 #setting-fields {
-  background-color: #8cff1a;
+  background-color: #638B9D;
   margin: 12px;
 }
 
