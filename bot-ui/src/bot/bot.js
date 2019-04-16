@@ -4,7 +4,12 @@ const botToken = 'NTQ0ODM4NTk3NTA1OTc0Mjkx.D1arZQ.MRQaVsPYO6cMhcmUhoP2FlhmDEI'
 const commands = require('./commands')
 const prefix = '-'
 
-client.login(botToken)
+
+
+// If error during login, return error message.
+client.login(botToken).catch((error) => {
+    return error.message;
+});
 // Invite link https://discordapp.com/api/oauth2/authorize?client_id=544838597505974291&permissions=10240&scope=bot
 
 client.on('ready', () => {
