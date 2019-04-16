@@ -2,14 +2,9 @@
     <div id="commands">
         <ul id="command-list">
             <li v-for="(command,index) in commands.commands" :key="command.id">
-              <div class="cmdcheck cmdcheck-enabled" v-if="command.enabled" v-on:click="commandEnabled(index)">
-                <input :value="command.enabled"  :id="'cmdcheck' + command.id" class="cmdcheck-enabled" type="checkbox">
-                <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
-              </div>
-              <div class="cmdcheck cmdcheck-disabled" v-else v-on:click="commandEnabled(index)">
-                <input :value="command.enabled" :id="'cmdcheck' + command.id" class="cmdcheck-disabled" type="checkbox">
-                <label :for="'cmdcheck' + command.id">{{ command.desc }}</label>
-              </div>
+              <v-btn  v-on:click="commandEnabled(index)" :class="{'disabled': !command.enabled}" :value="command.enabled" :id="'cmdcheck' + command.id" class="command" type="checkbox">
+                {{ command.desc }} 
+              </v-btn>
             </li>
         </ul>
     </div>
@@ -65,9 +60,13 @@ export default {
     visibility: hidden;
   }
 
-  .cmdcheck-enabled {
-    background-color: #2F7D41;
+  .command {
+    background-color: #2F7D41 !important;
   }
+
+.disabled {
+  background-color: #98555A !important;
+}
 
   .cmdcheck-enabled:hover {
     background-color: #235B30;
