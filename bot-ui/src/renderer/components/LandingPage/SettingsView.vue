@@ -1,19 +1,22 @@
 <template>
   <div id="settings-view">
-    <div id="setting-fields">
-      <input id="bot-token" type="text" size="59" maxlength="59" name="bottoken" placeholder="Bot token">
+    <div id="instructions">
+      <h1>Instructions</h1><br/>
+      <p>1. Go to <a id="link" href="https://discordapp.com/developers/applications/">https://discordapp.com/developers/applications/</a></p>
+      <p>2. Navigate to bot </p>
+      <p>3. Paste bot id into bot token field</p>
     </div>
-    <webview id="devPortal" :src="devPortalUrl"></webview>
+    <div id="setting-fields">
+      <label for="bot-token">Bot token</label>
+      <input id="bot-token" type="text" size="59" maxlength="59" name="bottoken">
+    </div>
+    
   </div>
 </template>
-
 <script>
   export default {
     data () {
-      var id = 547006018182184960
-      var devPortalUrl = 'https://discordapp.com/developers/applications/' + id + '/bots'
       return {
-        devPortalUrl
       }
     }
   }
@@ -35,5 +38,18 @@
   border-style: solid;
   border-width: 1px;
   margin: 16px;
+  color: #DADADA;
 }
+
+#instructions {
+  margin: 12px;
+  background-color: #23272A;
+  padding: 24px;
+}
+
+label {
+  color: #DADADA;
+  padding-left: 24px;
+}
+
 </style>

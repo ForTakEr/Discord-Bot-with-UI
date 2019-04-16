@@ -62,6 +62,7 @@ export default {
 
   .command {
     background-color: #2F7D41 !important;
+    color: #D6CBCB !important;
   }
 
 .disabled {
