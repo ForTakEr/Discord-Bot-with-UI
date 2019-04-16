@@ -9,7 +9,9 @@ client.login(botToken)
 
 client.on('ready', () => {
   console.log('I am ready!')
-  client.user.setActivity('-' + 'help', { type: 'PLAYING' })
+  client.user.setActivity('-' + 'help', {
+    type: 'PLAYING'
+  })
 })
 
 client.on('message', message => {
@@ -24,7 +26,20 @@ client.on('message', message => {
   Object.values(commands).forEach(async (command) => {
     const response = await command(message)
     if (response) {
-      message.reply(response)
+      if (response.isPromise) {
+        response.promise.then(function (value) {
+          var data = value.data
+          var test = new Discord.RichEmbed()
+            .setTitle(data.text)
+            .setImage(data.url)
+          message.channel.sendEmbed(test)
+        })
+          .catch(function (error) {
+            console.log(error)
+          })
+      } else {
+        message.reply(response)
+      }
     }
   })
 })
