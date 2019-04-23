@@ -2,8 +2,8 @@ const state = {
   commands: [
     {
       id: 0,
-      name: 'stream',
-      desc: 'Stream music from youtube',
+      name: 'ping',
+      desc: 'Get delay between client and Discord server in ms',
       enabled: false
     },
     {
