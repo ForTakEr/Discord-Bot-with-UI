@@ -2,15 +2,19 @@
   <div id="settings-view">
     <div id="instructions">
       <h1>Instructions</h1><br/>
-      <p>1. Go to <a id="link" href="https://discordapp.com/developers/applications/">https://discordapp.com/developers/applications/</a></p>
-      <p>2. Navigate to bot </p>
-      <p>3. Paste bot id into bot token field</p>
+      <p>1. Navigate to <a id="link" href="https://discordapp.com/developers/applications/">https://discordapp.com/developers/applications/</a></p>
+      <p>2. Log into to your account</p>
+      <p>3. Create new application and insert name of it</p>
+      <img src="../../assets/instruction1.png" width="800px">
+      <p>4. Navigate to bot section and add bot</p>
+      <img src="../../assets/instruction2.png" width="800px">
+      <p>5. Copy bot token and paste it below</p>
+      <img src="../../assets/instruction3.png" width="800px">
     </div>
     <div id="setting-fields">
-      <label for="bot-token">Bot token</label>
+      <label for="bot-token">Bot token: </label>
       <input id="bot-token" type="text" size="59" maxlength="59" name="bottoken">
     </div>
-    
   </div>
 </template>
 <script>
