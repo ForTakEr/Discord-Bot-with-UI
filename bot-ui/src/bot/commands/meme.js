@@ -1,8 +1,11 @@
+'use strict'
 var axios = require('axios')
-const url = 'https://some-random-api.ml/meme'
+var name = 'meme'
+var description = 'meme'
+var url = 'https://some-random-api.ml/meme'
 
-module.exports = async (msg) => {
-  if (msg.content !== 'meme') {
+export default async function (msg) {
+  if (msg.content !== name) {
     return false
   }
 
