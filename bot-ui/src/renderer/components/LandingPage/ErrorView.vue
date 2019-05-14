@@ -1,6 +1,6 @@
 <template>
-  <div id="errors" v-if="display">
-    <p id="messages">{{msg}}</p>
+  <div id="errors" v-if="msg != ''">
+    <p id="messages">ERROR: {{msg}}</p>
   </div>
 
 </template>
@@ -8,23 +8,16 @@
 <script>
   export default {
     mounted () {
-      this.display = false
       this.msg = ''
     },
     data () {
       return {
-        display: this.display,
         msg: this.msg
       }
     },
     methods: {
       setErrorMessage: function (msg) {
         this.msg = msg
-
-        this.display = false
-        if (this.msg.length === 0) {
-          this.display = true
-        }
       }
     }
   }
@@ -50,13 +43,7 @@
 
   #messages {
     padding: 24px;
-    font-size: 18px;
-    color: #bb0000;
+    color: 	#c22933;
   }
-
-  #msg-header {
-    padding: 24px;
-    color: #bb0000;
-  }  
 
 </style>
