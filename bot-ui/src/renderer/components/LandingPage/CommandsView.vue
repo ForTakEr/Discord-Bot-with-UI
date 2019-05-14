@@ -25,6 +25,8 @@ export default {
     tt({
       position: 'right',
       style: {
+        backgroundColor: '#7289DA',
+        color: '#23272A'
       }
     })
   },
