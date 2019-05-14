@@ -21,6 +21,9 @@
         curView: this.curView
       }
     },
+    mounted () {
+      this.curView = 'CommandsView'
+    },
     methods: {
       setCurView: function (view) {
         this.curView = view
