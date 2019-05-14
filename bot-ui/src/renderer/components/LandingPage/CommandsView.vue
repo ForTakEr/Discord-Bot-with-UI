@@ -1,8 +1,8 @@
 <template>
     <div id="commands">
         <ul id="command-list">
-            <li  :data-tooltip="command.desc" v-for="(command,index) in commands.commands" :key="command.id">
-              <v-btn  v-on:click="commandEnabled(index)" :class="{'disabled': !command.enabled}" :value="command.enabled" :id="'cmdcheck' + command.id" class="command" type="checkbox">
+            <li :data-tooltip="command.desc" v-for="(command,index) in commands.commands" :key="command.id">
+              <v-btn v-on:click="commandEnabled(index)" :class="{'disabled': !command.enabled}" :value="command.enabled" :id="'cmdcheck' + command.id" class="command" type="checkbox">
                 {{ command.name }} 
               </v-btn>
             </li>
@@ -23,7 +23,7 @@ export default {
   mounted () {
     console.log(this.$store)
     tt({
-      position: 'top',
+      position: 'right',
       style: {
       }
     })
