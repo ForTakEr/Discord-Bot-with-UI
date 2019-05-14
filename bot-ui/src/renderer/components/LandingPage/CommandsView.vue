@@ -68,11 +68,11 @@ export default {
   }
 
   #command-list li {
-    padding-bottom: 12px;
+    margin-bottom: 12px;
   }
 
   #command-list li:last-child {
-    padding-bottom: 0px;
+    margin-bottom: 0px;
   }
 
   .cmdcheck input {
