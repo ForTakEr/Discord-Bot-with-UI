@@ -3,7 +3,7 @@
     <TopBar></TopBar>
     <CommandsView v-if="curView == 'CommandsView'"></CommandsView>
     <SettingsView v-if="curView == 'SettingsView'"></SettingsView>
-    <ErrorView></ErrorView>
+    <StatusView></StatusView>
   </div>
 </template>
 
@@ -11,11 +11,11 @@
   import TopBar from './LandingPage/TopBar'
   import CommandsView from './LandingPage/CommandsView'
   import SettingsView from './LandingPage/SettingsView'
-  import ErrorView from './LandingPage/ErrorView'
+  import StatusView from './LandingPage/StatusView'
 
   export default {
     name: 'landing-page',
-    components: { TopBar, CommandsView, SettingsView, ErrorView },
+    components: { TopBar, CommandsView, SettingsView, StatusView },
     data () {
       return {
         curView: this.curView

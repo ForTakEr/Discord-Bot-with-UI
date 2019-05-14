@@ -1,6 +1,7 @@
 <template>
-  <div id="errors" v-if="msg != ''">
-    <p id="messages">ERROR: {{msg}}</p>
+  <div id="status">
+    <p id="bot-status"><b>Bot status:</b> {{error}}</p>
+    <p v-if="status != ''" id="errors"><b>Error:</b> {{status}}</p>
   </div>
 
 </template>
@@ -8,23 +9,28 @@
 <script>
   export default {
     mounted () {
-      this.msg = ''
+      this.error = 'not running'
+      this.status = ''
     },
     data () {
       return {
-        msg: this.msg
+        error: this.error,
+        status: this.status
       }
     },
     methods: {
       setErrorMessage: function (msg) {
-        this.msg = msg
+        this.error = msg
+      },
+      setBotStatus: function (msg) {
+        this.status = msg
       }
     }
   }
 </script>
 
 <style>
-  #errors {
+  #status {
     margin: 24px;
     background-color: #23272A;
     animation: slide-left 0.55s ease;
@@ -41,8 +47,14 @@
     }
   }
 
-  #messages {
+  #bot-status {
     padding: 24px;
+    color: 	#7289DA;
+  }
+
+  #errors {
+    padding: 24px;
+    padding-top: 0px;
     color: 	#c22933;
   }
 
