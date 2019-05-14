@@ -1,9 +1,9 @@
 <template>
     <div id="commands">
         <ul id="command-list">
-            <li v-for="(command,index) in commands.commands" :key="command.id">
+            <li  :data-tooltip="command.desc" v-for="(command,index) in commands.commands" :key="command.id">
               <v-btn  v-on:click="commandEnabled(index)" :class="{'disabled': !command.enabled}" :value="command.enabled" :id="'cmdcheck' + command.id" class="command" type="checkbox">
-                {{ command.desc }} 
+                {{ command.name }} 
               </v-btn>
             </li>
         </ul>
@@ -12,6 +12,7 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
+const tt = require('electron-tooltip')
 
 export default {
   computed: {
@@ -21,6 +22,11 @@ export default {
   },
   mounted () {
     console.log(this.$store)
+    tt({
+      position: 'top',
+      style: {
+      }
+    })
   },
   data: function () {
     return {
@@ -58,6 +64,7 @@ export default {
   #command-list {
     list-style-type: none;
     padding: 12px;
+    display: inline-block
   }
 
   #command-list li {
