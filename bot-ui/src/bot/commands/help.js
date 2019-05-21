@@ -1,7 +1,7 @@
 export default {
   id: 'help',
   name: 'Help',
-  description: 'helps user',
+  description: 'helps users',
   command: async function (msg) {
     if (msg.content !== 'help') {
       return false

@@ -14,7 +14,6 @@
         this.$store.dispatch('addCommand', command.default)
       })
       var prefix = '-' // If error during login, return error message.
-
       client.login(botToken).catch(function (error) {
         return error.message
       }) // Invite link https://discordapp.com/api/oauth2/authorize?client_id=544838597505974291&permissions=10240&scope=bot
