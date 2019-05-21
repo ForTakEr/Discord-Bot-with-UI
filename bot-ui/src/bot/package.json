@@ -4,6 +4,8 @@
   "description": "",
   "main": "bot.js",
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "axios": "^0.18.0",
     "discord.js": "^11.4.2"
   },
