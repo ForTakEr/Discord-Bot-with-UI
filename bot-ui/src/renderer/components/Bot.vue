@@ -32,7 +32,6 @@
         var sentCommand = args.shift().toLowerCase()
         message.content = sentCommand
         Object.values(commands).forEach(async (command) => {
-          console.log(!this.isCommandEnabled(command.default.id))
           if (!this.isCommandEnabled(command.default.id)) {
             return
           }
@@ -60,13 +59,13 @@
     },
     methods: {
       isCommandEnabled (id) {
+        let el
         this.commands.forEach(element => {
-          console.log(element)
           if (element.id === id) {
-            console.log(element.enabled)
-            return element.enabled
+            el = element
           }
         })
+        return el.enabled
       }
     },
     computed: {
