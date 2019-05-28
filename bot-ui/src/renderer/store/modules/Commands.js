@@ -1,19 +1,6 @@
-const state = {
-  commands: [
-    {
-      id: 0,
-      name: 'ping',
-      desc: 'Get delay between client and Discord server in ms',
-      enabled: false
-    },
-    {
-      id: 1,
-      name: 'meme',
-      desc: 'Send random meme',
-      enabled: true
-    }
-  ]
-}
+const commands = require('../../../bot/commands/index')
+
+const state = {commands: []}
 
 const getters = {
   commands: (state) => {
@@ -24,6 +11,9 @@ const getters = {
 const actions = {
   toggleCommandEnabled (context, index) {
     context.commit('setCommandEnabled', {index: index, value: !context.state.commands[index].enabled})
+  },
+  addCommand (context, command) {
+    context.commit('ADD_COMMAND', command)
   }
 }
 
@@ -31,6 +21,10 @@ const mutations = {
   setCommandEnabled (state, payload) {
     // mutate state
     state.commands[payload.index].enabled = payload.value
+  },
+  ADD_COMMAND (state, payload) {
+    // mutate state
+    state.commands.push({name: payload.name, desc: payload.description, id: payload.id, enabled: false})
   }
 }
 
